@@ -1,19 +1,16 @@
 {
-    "name": "kuainiu/multi-tenant",
+    "name": "Tone2015/multi-tenant",
     "description": "Run multiple websites using the same laravel installation while keeping tenant specific data separated for fully independant multi-domain setups.",
     "keywords": [
         "laravel",
         "multi-tenant",
         "multi-tenancy",
-        "tenancy",
-        "saas"
+        "tenancy"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Daniël Klabbers",
-            "email": "daniel+hyn@klabbers.email",
-            "homepage": "https://luceos.com"
+            "name": "Wtone"
         }
     ],
     "support": {

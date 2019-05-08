@@ -45,7 +45,7 @@ Please read the full [requirements in the documentation](https://laravel-tenancy
 ## Installation
 
 ```bash
-composer require hyn/multi-tenant
+composer require wtone/multi-tenant
 ```
 
 ### Automatic service registration
@@ -63,7 +63,7 @@ set the `dont-discover` in your application composer.json, like so:
     "extra": {
         "laravel": {
             "dont-discover": [
-                "hyn/multi-tenant"
+                "wtone/multi-tenant"
             ]
         }
     }

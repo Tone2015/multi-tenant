@@ -69,7 +69,7 @@ class HostnameActions
                 return $this->secure($hostname, $request);
             }
         } else {
-            $this->abort($request);
+//            $this->abort($request);
         }
 
         return $next($request);

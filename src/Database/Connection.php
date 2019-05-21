@@ -151,6 +151,11 @@ class Connection
                 sprintf('database.connections.%s', $connection),
                 $this->generateConfigurationArray($website)
             );
+
+            // set database.default
+            if ($this->config->get('tenancy.db.set_default_connection', true)) {
+                $this->config->set('database.default', $connection);
+            }
         }
 
         if (Arr::get($existing, 'uuid') === optional($website)->uuid) {

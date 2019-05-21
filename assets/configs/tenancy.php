@@ -175,6 +175,10 @@ return [
          */
         'default' => env('TENANCY_DEFAULT_CONNECTION'),
         /**
+         * 是否在切换租户环境时，将database.default 设置为租户链接名
+         */
+        'set_default_connection' => env('TENANCY_SET_DEFAULT_CONNECTION',true),
+        /**
          * Used to give names to the system and tenant database connections. By
          * default we configure 'system' and 'tenant'. The tenant connection
          * is set up automatically by this package.

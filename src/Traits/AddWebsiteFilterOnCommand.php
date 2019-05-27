@@ -14,7 +14,6 @@
 
 namespace Hyn\Tenancy\Traits;
 
-use Hyn\Tenancy\Environment;
 use Illuminate\Database\Eloquent\Collection;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -28,13 +27,9 @@ trait AddWebsiteFilterOnCommand
             $query->whereIn('id', (array) $this->option('website_id'));
         }
 
-        //获取租户环境
-        $environment = app(Environment::class);
-        $query->orderBy('id')->chunk(10, function (Collection $websites) use ($callable, $environment) {
-            $websites->each(function ($website) use ($callable, $websites, $environment) {
+        $query->orderBy('id')->chunk(10, function (Collection $websites) use ($callable) {
+            $websites->each(function ($website) use ($callable, $websites) {
                 $this->connection->set($website);
-                //设置租户
-                $environment->tenant($website);
 
                 is_callable($callable) ? $callable($website) : parent::handle();
 
